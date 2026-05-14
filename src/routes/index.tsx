@@ -349,7 +349,7 @@ function Index() {
               />
               <InfoCard
                 label="Hours"
-                value="Open daily · Closes 11:30 pm"
+                value="Open daily · 8:30 am — 11:30 pm"
                 href="https://www.zomato.com"
                 cta="Reserve via Zomato"
               />
