@@ -203,34 +203,46 @@ function Index() {
             <h2 className="font-display text-5xl font-light md:text-7xl">
               Sweet, savoury, <em className="text-gradient-gold">always flaky.</em>
             </h2>
+            <p className="mx-auto mt-5 max-w-xl text-sm text-muted-foreground">
+              All croissants 100% eggless. Baked in small batches through the day.
+            </p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {MENU.map((item, i) => (
-              <article
-                key={item.name}
-                className="glass group relative overflow-hidden rounded-3xl p-7 transition duration-500 hover:-translate-y-1 hover:bg-white/10"
-                style={{ animationDelay: `${i * 80}ms` }}
-              >
-                <div className="mb-6 flex items-start justify-between gap-4">
-                  <div>
-                    <p className="text-[10px] uppercase tracking-[0.25em] text-[var(--gold-soft)]">
-                      {item.tag}
-                    </p>
-                    <h3 className="mt-2 font-display text-2xl">{item.name}</h3>
-                  </div>
-                  <span className="font-display text-lg text-gradient-gold">
-                    ₹{item.price}
-                  </span>
+          <div className="space-y-10">
+            {MENU_SECTIONS.map((section) => (
+              <div key={section.title} className="glass rounded-3xl p-8 md:p-10">
+                <div className="mb-8 flex items-baseline justify-between border-b border-white/10 pb-4">
+                  <h3 className="font-display text-2xl md:text-3xl">{section.title}</h3>
+                  <p className="text-[10px] uppercase tracking-[0.25em] text-[var(--gold-soft)]">
+                    {section.tag}
+                  </p>
                 </div>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {item.desc}
-                </p>
-                <div className="mt-6 h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent" />
-                <div className="mt-4 text-xs uppercase tracking-widest text-muted-foreground">
-                  Baked fresh daily
-                </div>
-              </article>
+                <ul className="grid gap-x-10 gap-y-5 md:grid-cols-2">
+                  {section.items.map((item) => (
+                    <li key={item.name} className="group flex items-start gap-4">
+                      <div className="flex-1">
+                        <div className="flex items-baseline gap-3">
+                          <span className="font-display text-base text-foreground">
+                            {item.name}
+                          </span>
+                          <span
+                            className="h-px flex-1 self-center border-b border-dotted border-white/15"
+                            aria-hidden
+                          />
+                          <span className="font-display text-sm text-gradient-gold whitespace-nowrap">
+                            ₹{item.price}
+                          </span>
+                        </div>
+                        {item.desc ? (
+                          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                            {item.desc}
+                          </p>
+                        ) : null}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </div>
