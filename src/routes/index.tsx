@@ -2,8 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import heroImg from "@/assets/hero-croissant.jpg";
 import menuImg from "@/assets/menu-spread.jpg";
-import interiorImg from "@/assets/cafe-interior.jpg";
+import interiorImg from "@/assets/interior-entrance.jpg";
+import storefrontImg from "@/assets/storefront.jpg";
+import outdoorImg from "@/assets/outdoor-seating.jpg";
 import miniImg from "@/assets/mini-croissant.jpg";
+import logo from "@/assets/logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -43,10 +46,8 @@ function Index() {
           }`}
         >
           <a href="#top" className="flex items-center gap-2">
-            <span className="grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-[var(--gold-soft)] to-[var(--ember)] text-[var(--background)] font-display text-base font-bold">
-              C
-            </span>
-            <span className="font-display text-base tracking-wide">
+            <img src={logo} alt="Crosaaintwala & Co." className="h-9 w-9 object-contain drop-shadow-[0_2px_8px_rgba(212,175,55,0.4)]" />
+            <span className="font-display text-base tracking-wide hidden sm:inline">
               Crosaaintwala <span className="text-muted-foreground">& Co.</span>
             </span>
           </a>
