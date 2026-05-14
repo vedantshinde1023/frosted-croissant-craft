@@ -251,6 +251,45 @@ function Index() {
 
       {/* TESTIMONIAL band */}
       <section className="relative px-6 py-24">
+        {/* Gallery */}
+        <div className="mx-auto mb-24 max-w-6xl">
+          <div className="mb-10 flex items-end justify-between gap-6">
+            <div>
+              <p className="mb-3 text-xs uppercase tracking-[0.3em] text-[var(--gold-soft)]">
+                The shop
+              </p>
+              <h2 className="font-display text-4xl font-light md:text-5xl">
+                Tucked into <em className="text-gradient-gold">NIBM Road.</em>
+              </h2>
+            </div>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            <figure className="glass group relative col-span-2 overflow-hidden rounded-3xl">
+              <img
+                src={storefrontImg}
+                alt="Crosaaintwala & Co. storefront on NIBM Road"
+                width={1200}
+                height={900}
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105"
+              />
+              <figcaption className="glass absolute bottom-4 left-4 rounded-full px-4 py-1.5 text-xs uppercase tracking-widest">
+                Shop No 9 · Royal Kp Stellar
+              </figcaption>
+            </figure>
+            <figure className="glass group overflow-hidden rounded-3xl">
+              <img
+                src={outdoorImg}
+                alt="Outdoor seating at Crosaaintwala & Co."
+                width={800}
+                height={900}
+                loading="lazy"
+                className="aspect-[4/3] h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              />
+            </figure>
+          </div>
+        </div>
+
         <div className="mx-auto max-w-5xl">
           <div className="glass-strong relative overflow-hidden rounded-[2.5rem] p-10 md:p-16">
             <img
