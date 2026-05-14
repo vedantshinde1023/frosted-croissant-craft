@@ -105,7 +105,7 @@ function Index() {
                 href="https://www.zomato.com/pune/crosaaintwala-co-hadapsar/order"
                 target="_blank"
                 rel="noreferrer"
-                className="glass rounded-full px-6 py-3 text-sm font-medium text-foreground transition hover:bg-white/10"
+                className="rounded-full bg-[#E23744] px-6 py-3 text-sm font-medium text-white shadow-[0_10px_30px_-10px_rgba(226,55,68,0.6)] transition hover:scale-[1.02] hover:bg-[#cf2f3c]"
               >
                 Order on Zomato
               </a>
@@ -313,6 +313,26 @@ function Index() {
             <p className="max-w-sm text-sm text-muted-foreground">
               From 109+ diners who walked in for a croissant and stayed for a second.
             </p>
+          </div>
+
+          <div className="glass-strong mb-8 rounded-3xl p-6 md:p-8">
+            <div className="flex items-start gap-4">
+              <div className="hidden h-12 w-12 shrink-0 place-items-center rounded-full bg-white/5 sm:grid">
+                <span className="font-display text-xl text-gradient-gold">G</span>
+              </div>
+              <div>
+                <p className="mb-2 text-[10px] uppercase tracking-[0.25em] text-[var(--gold-soft)]">
+                  Google review summary
+                </p>
+                <p className="text-base leading-relaxed text-foreground/90 md:text-lg">
+                  Diners highlight the <em className="text-gradient-gold not-italic font-medium">freshly baked croissants</em> —
+                  flaky, buttery, soft — with the chocolate and mini croissants getting the most love.
+                  The wide range of flavours, including savoury picks like cheese mushroom and paneer
+                  paprika, gets called out often. Guests appreciate the warm welcoming vibe, attentive
+                  staff, and affordable prices.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
