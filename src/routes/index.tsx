@@ -315,6 +315,26 @@ function Index() {
             </p>
           </div>
 
+          <div className="glass-strong mb-8 rounded-3xl p-6 md:p-8">
+            <div className="flex items-start gap-4">
+              <div className="hidden h-12 w-12 shrink-0 place-items-center rounded-full bg-white/5 sm:grid">
+                <span className="font-display text-xl text-gradient-gold">G</span>
+              </div>
+              <div>
+                <p className="mb-2 text-[10px] uppercase tracking-[0.25em] text-[var(--gold-soft)]">
+                  Google review summary
+                </p>
+                <p className="text-base leading-relaxed text-foreground/90 md:text-lg">
+                  Diners highlight the <em className="text-gradient-gold not-italic font-medium">freshly baked croissants</em> —
+                  flaky, buttery, soft — with the chocolate and mini croissants getting the most love.
+                  The wide range of flavours, including savoury picks like cheese mushroom and paneer
+                  paprika, gets called out often. Guests appreciate the warm welcoming vibe, attentive
+                  staff, and affordable prices.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {REVIEWS.map((r) => (
               <article
