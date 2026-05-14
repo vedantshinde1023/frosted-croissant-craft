@@ -419,6 +419,33 @@ function InfoCard({
 type MenuItem = { name: string; price: string; desc?: string };
 type MenuSection = { title: string; tag: string; items: MenuItem[] };
 
+const REVIEWS: { name: string; when: string; stars: number; text: string }[] = [
+  {
+    name: "Rashida Lakdawala",
+    when: "Yesterday",
+    stars: 5,
+    text: "A truly wonderful experience — food was absolutely amazing and service was prompt. The croissant was notably fresh and crispy. Family thoroughly enjoyed our time.",
+  },
+  {
+    name: "Shalini Ratwani",
+    when: "2 days ago",
+    stars: 5,
+    text: "Really good variety and everything tastes good 💯",
+  },
+  {
+    name: "Rukayya Kanchwala",
+    when: "Yesterday",
+    stars: 5,
+    text: "A very nice place for a casual go-to time with friends.",
+  },
+  {
+    name: "Nandini Chougule",
+    when: "3 days ago",
+    stars: 5,
+    text: "Amazing food.",
+  },
+];
+
 const MENU_SECTIONS: MenuSection[] = [
   {
     title: "The Croissants",
