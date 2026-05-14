@@ -360,41 +360,68 @@ function InfoCard({
   );
 }
 
-const MENU = [
+type MenuItem = { name: string; price: string; desc?: string };
+type MenuSection = { title: string; tag: string; items: MenuItem[] };
+
+const MENU_SECTIONS: MenuSection[] = [
   {
-    tag: "Signature",
-    name: "Classic Croissant",
-    price: 120,
-    desc: "Pure French-butter lamination. Crackling shell, honeycomb crumb, golden through.",
+    title: "The Croissants",
+    tag: "Baked all day",
+    items: [
+      { name: "Classic Croissant", price: "110", desc: "Pure French-butter lamination, crackling shell, honeycomb crumb." },
+      { name: "Cheese Croissant", price: "150", desc: "Aged cheddar folded through the layers." },
+      { name: "Cinnamon Croissant", price: "150", desc: "Warm cinnamon sugar, glazed and golden." },
+      { name: "Cheese Chilli Croissant", price: "170", desc: "Cheese, fresh chilli, a little kick." },
+      { name: "Raspberry & Pistachio", price: "210", desc: "Raspberry preserve, pistachio cream." },
+      { name: "Chocolate Peanut Butter", price: "210", desc: "Dark chocolate ganache, salted peanut butter." },
+      { name: "Benoff Croissant", price: "220", desc: "Banana, toffee sauce, whipped cream." },
+      { name: "Nutella Croissant", price: "210" },
+      { name: "Mini Croissant", price: "60", desc: "Bite-sized, perfect with chai." },
+      { name: "Croissant Pudding", price: "230", desc: "Bread pudding, croissant style." },
+    ],
   },
   {
-    tag: "Sweet",
-    name: "Dark Chocolate",
-    price: 160,
-    desc: "Two batons of 64% Belgian chocolate, folded into a slow-proofed dough.",
+    title: "Special — Croissant Sandwiches",
+    tag: "₹230 / 265",
+    items: [
+      { name: "Creamy Cheese Mushroom", price: "230", desc: "Sautéed mushrooms, creamy cheese sauce." },
+      { name: "Grilled Paneer & Veggies", price: "230" },
+      { name: "Paprika Paneer Sandwich", price: "230" },
+      { name: "Creamy Mushroom Sandwich", price: "230" },
+      { name: "Egg Salad Sandwich", price: "230" },
+      { name: "Smoked Chicken Avocado", price: "265" },
+      { name: "BBQ Chicken Sandwich", price: "265" },
+      { name: "Grilled Chicken Sandwich", price: "265" },
+      { name: "Paprika Chicken & Veggies", price: "265" },
+      { name: "Scrambled Egg & Cheese", price: "230" },
+      { name: "Chocolate Croissant", price: "230" },
+    ],
   },
   {
-    tag: "Sweet",
-    name: "Almond",
-    price: 170,
-    desc: "Rebaked with frangipane, toasted flakes, and a dust of icing sugar.",
+    title: "Mini Pizzas",
+    tag: "Wood-base, freshly baked",
+    items: [
+      { name: "Veg Hyderabadi Dum", price: "220" },
+      { name: "Paneer Tikka", price: "220" },
+      { name: "Tandoori Paneer", price: "220" },
+      { name: "Chicken Hyderabadi", price: "260" },
+      { name: "Butter Chicken", price: "260" },
+      { name: "Margherita", price: "180" },
+      { name: "Chicken Tikka", price: "260" },
+    ],
   },
   {
-    tag: "Savoury",
-    name: "Cheese & Mushroom",
-    price: 220,
-    desc: "Sautéed button mushrooms, melted mozzarella, fresh thyme. Brunch in a bite.",
-  },
-  {
-    tag: "Savoury",
-    name: "Paneer Paprika",
-    price: 230,
-    desc: "Smoky paprika paneer, pickled onion, a whisper of green chilli.",
-  },
-  {
-    tag: "Mini",
-    name: "Mini Croissant Box",
-    price: 280,
-    desc: "Six bite-sized morsels — assorted sweet & savoury. The crowd-pleaser.",
+    title: "Coffee & Chai",
+    tag: "Brewed to order",
+    items: [
+      { name: "Filter Coffee", price: "90" },
+      { name: "Cappuccino", price: "140" },
+      { name: "Latte", price: "150" },
+      { name: "Espresso", price: "110" },
+      { name: "Hot Chocolate", price: "170" },
+      { name: "Masala Chai", price: "70" },
+      { name: "Bombay Cutting", price: "60" },
+      { name: "Iced Americano", price: "150" },
+    ],
   },
 ];
