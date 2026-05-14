@@ -120,7 +120,7 @@ function Index() {
               <div className="h-8 w-px bg-white/10" />
               <div>
                 <div className="font-display text-2xl text-foreground">Open</div>
-                <div className="text-xs">Closes 11:30 pm</div>
+                <div className="text-xs">8:30 am — 11:30 pm</div>
               </div>
             </div>
           </div>
