@@ -357,14 +357,58 @@ function Index() {
               Walk in, dial in, or reserve a table. We're open till late and we've
               probably just pulled a fresh tray.
             </p>
+
+            <div className="mt-8 grid gap-3">
+              <a
+                href="https://www.swiggy.com/city/pune/crosaaintwala-and-co-undri-rest1353841?utm_source=GooglePlaceOrder&utm_campaign=GoogleMap&is_retargeting=true&media_source=GooglePlaceOrder"
+                target="_blank"
+                rel="noreferrer"
+                className="glass group flex items-center justify-between rounded-2xl px-5 py-4 transition hover:bg-white/10"
+              >
+                <span className="flex items-center gap-3">
+                  <span className="grid h-9 w-9 place-items-center rounded-full bg-[#FC8019] text-base font-bold text-white">S</span>
+                  <span>
+                    <span className="block text-sm font-medium text-foreground">Order on Swiggy</span>
+                    <span className="block text-[10px] uppercase tracking-widest text-muted-foreground">30–40 min delivery</span>
+                  </span>
+                </span>
+                <span className="text-muted-foreground transition group-hover:text-[var(--gold-soft)]">→</span>
+              </a>
+              <a
+                href="https://www.zomato.com/pune/crosaaintwala-co-hadapsar/order"
+                target="_blank"
+                rel="noreferrer"
+                className="glass group flex items-center justify-between rounded-2xl px-5 py-4 transition hover:bg-white/10"
+              >
+                <span className="flex items-center gap-3">
+                  <span className="grid h-9 w-9 place-items-center rounded-full bg-[#E23744] text-base font-bold text-white">Z</span>
+                  <span>
+                    <span className="block text-sm font-medium text-foreground">Order on Zomato</span>
+                    <span className="block text-[10px] uppercase tracking-widest text-muted-foreground">Delivery & dine-in</span>
+                  </span>
+                </span>
+                <span className="text-muted-foreground transition group-hover:text-[var(--gold-soft)]">→</span>
+              </a>
+            </div>
           </div>
 
           <div className="grid gap-4 md:col-span-3">
+            <div className="glass relative overflow-hidden rounded-3xl">
+              <iframe
+                title="Crosaaintwala & Co. on Google Maps"
+                src="https://www.google.com/maps?q=Crosaaintwala+%26+Co,+Royal+Kp+Stellar,+NIBM+Rd,+Mohammed+Wadi,+Pune+411060&output=embed"
+                loading="lazy"
+                className="h-72 w-full border-0 [filter:invert(0.92)_hue-rotate(180deg)_saturate(0.6)_brightness(0.95)]"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+              <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
+            </div>
             <InfoCard
               label="Address"
               value="Shop No 9, Royal Kp Stellar, NIBM Rd, Autadwadi Handewadi, Mohammed Wadi, Pune 411060"
-              href="https://maps.google.com/?q=Crosaaintwala+%26+Co+Pune"
-              cta="Open in Maps"
+              href="https://www.google.com/maps/dir/?api=1&destination=Crosaaintwala+%26+Co,+NIBM+Rd,+Pune+411060"
+              cta="Get directions"
             />
             <div className="grid gap-4 md:grid-cols-2">
               <InfoCard
