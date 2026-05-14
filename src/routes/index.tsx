@@ -107,7 +107,13 @@ function Index() {
                 rel="noreferrer"
                 className="glass rounded-full px-6 py-3 text-sm font-medium text-foreground transition hover:bg-white/10"
               >
-                Find the shop
+                Order on Zomato
+              </a>
+              <a
+                href="#visit"
+                className="rounded-full px-6 py-3 text-sm font-medium text-muted-foreground transition hover:text-foreground"
+              >
+                Find the shop →
               </a>
             </div>
 
