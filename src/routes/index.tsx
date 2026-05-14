@@ -290,28 +290,44 @@ function Index() {
           </div>
         </div>
 
-        <div className="mx-auto max-w-5xl">
-          <div className="glass-strong relative overflow-hidden rounded-[2.5rem] p-10 md:p-16">
-            <img
-              src={miniImg}
-              alt=""
-              aria-hidden
-              width={1200}
-              height={1500}
-              loading="lazy"
-              className="absolute -right-20 -top-10 hidden h-[140%] w-1/2 object-cover opacity-40 md:block"
-              style={{ maskImage: "linear-gradient(to left, black 40%, transparent)" }}
-            />
-            <div className="relative max-w-xl">
-              <div className="mb-4 text-2xl text-[var(--gold)]">★ ★ ★ ★ ★</div>
-              <blockquote className="font-display text-3xl font-light leading-snug md:text-5xl">
-                "They bake their own croissants <em className="text-gradient-gold">fresh and crispy</em> —
-                rare to find. Genuinely warm service."
-              </blockquote>
-              <p className="mt-6 text-sm uppercase tracking-[0.25em] text-muted-foreground">
-                — Diner, Google Reviews
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-12 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <p className="mb-3 text-xs uppercase tracking-[0.3em] text-[var(--gold-soft)]">
+                Loved by the neighbourhood
               </p>
+              <h2 className="font-display text-4xl font-light leading-tight md:text-6xl">
+                <span className="text-gradient-gold">4.7</span> on Google
+              </h2>
             </div>
+            <p className="max-w-sm text-sm text-muted-foreground">
+              From 109+ diners who walked in for a croissant and stayed for a second.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {REVIEWS.map((r) => (
+              <article
+                key={r.name}
+                className="glass flex flex-col rounded-3xl p-6 transition hover:-translate-y-1 hover:bg-white/10"
+              >
+                <div className="mb-3 flex items-center gap-3">
+                  <div className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-[var(--gold-soft)] to-[var(--ember)] font-display text-base text-[var(--background)]">
+                    {r.name.charAt(0)}
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-foreground">{r.name}</div>
+                    <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
+                      {r.when}
+                    </div>
+                  </div>
+                </div>
+                <div className="mb-3 text-sm text-[var(--gold)]">{"★".repeat(r.stars)}<span className="text-muted-foreground">{"★".repeat(5 - r.stars)}</span></div>
+                <p className="flex-1 text-sm leading-relaxed text-muted-foreground">
+                  "{r.text}"
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
