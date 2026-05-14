@@ -203,34 +203,46 @@ function Index() {
             <h2 className="font-display text-5xl font-light md:text-7xl">
               Sweet, savoury, <em className="text-gradient-gold">always flaky.</em>
             </h2>
+            <p className="mx-auto mt-5 max-w-xl text-sm text-muted-foreground">
+              All croissants 100% eggless. Baked in small batches through the day.
+            </p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {MENU.map((item, i) => (
-              <article
-                key={item.name}
-                className="glass group relative overflow-hidden rounded-3xl p-7 transition duration-500 hover:-translate-y-1 hover:bg-white/10"
-                style={{ animationDelay: `${i * 80}ms` }}
-              >
-                <div className="mb-6 flex items-start justify-between gap-4">
-                  <div>
-                    <p className="text-[10px] uppercase tracking-[0.25em] text-[var(--gold-soft)]">
-                      {item.tag}
-                    </p>
-                    <h3 className="mt-2 font-display text-2xl">{item.name}</h3>
-                  </div>
-                  <span className="font-display text-lg text-gradient-gold">
-                    ₹{item.price}
-                  </span>
+          <div className="space-y-10">
+            {MENU_SECTIONS.map((section) => (
+              <div key={section.title} className="glass rounded-3xl p-8 md:p-10">
+                <div className="mb-8 flex items-baseline justify-between border-b border-white/10 pb-4">
+                  <h3 className="font-display text-2xl md:text-3xl">{section.title}</h3>
+                  <p className="text-[10px] uppercase tracking-[0.25em] text-[var(--gold-soft)]">
+                    {section.tag}
+                  </p>
                 </div>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {item.desc}
-                </p>
-                <div className="mt-6 h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent" />
-                <div className="mt-4 text-xs uppercase tracking-widest text-muted-foreground">
-                  Baked fresh daily
-                </div>
-              </article>
+                <ul className="grid gap-x-10 gap-y-5 md:grid-cols-2">
+                  {section.items.map((item) => (
+                    <li key={item.name} className="group flex items-start gap-4">
+                      <div className="flex-1">
+                        <div className="flex items-baseline gap-3">
+                          <span className="font-display text-base text-foreground">
+                            {item.name}
+                          </span>
+                          <span
+                            className="h-px flex-1 self-center border-b border-dotted border-white/15"
+                            aria-hidden
+                          />
+                          <span className="font-display text-sm text-gradient-gold whitespace-nowrap">
+                            ₹{item.price}
+                          </span>
+                        </div>
+                        {item.desc ? (
+                          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                            {item.desc}
+                          </p>
+                        ) : null}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </div>
@@ -348,41 +360,68 @@ function InfoCard({
   );
 }
 
-const MENU = [
+type MenuItem = { name: string; price: string; desc?: string };
+type MenuSection = { title: string; tag: string; items: MenuItem[] };
+
+const MENU_SECTIONS: MenuSection[] = [
   {
-    tag: "Signature",
-    name: "Classic Croissant",
-    price: 120,
-    desc: "Pure French-butter lamination. Crackling shell, honeycomb crumb, golden through.",
+    title: "The Croissants",
+    tag: "Baked all day",
+    items: [
+      { name: "Classic Croissant", price: "110", desc: "Pure French-butter lamination, crackling shell, honeycomb crumb." },
+      { name: "Cheese Croissant", price: "150", desc: "Aged cheddar folded through the layers." },
+      { name: "Cinnamon Croissant", price: "150", desc: "Warm cinnamon sugar, glazed and golden." },
+      { name: "Cheese Chilli Croissant", price: "170", desc: "Cheese, fresh chilli, a little kick." },
+      { name: "Raspberry & Pistachio", price: "210", desc: "Raspberry preserve, pistachio cream." },
+      { name: "Chocolate Peanut Butter", price: "210", desc: "Dark chocolate ganache, salted peanut butter." },
+      { name: "Benoff Croissant", price: "220", desc: "Banana, toffee sauce, whipped cream." },
+      { name: "Nutella Croissant", price: "210" },
+      { name: "Mini Croissant", price: "60", desc: "Bite-sized, perfect with chai." },
+      { name: "Croissant Pudding", price: "230", desc: "Bread pudding, croissant style." },
+    ],
   },
   {
-    tag: "Sweet",
-    name: "Dark Chocolate",
-    price: 160,
-    desc: "Two batons of 64% Belgian chocolate, folded into a slow-proofed dough.",
+    title: "Special — Croissant Sandwiches",
+    tag: "₹230 / 265",
+    items: [
+      { name: "Creamy Cheese Mushroom", price: "230", desc: "Sautéed mushrooms, creamy cheese sauce." },
+      { name: "Grilled Paneer & Veggies", price: "230" },
+      { name: "Paprika Paneer Sandwich", price: "230" },
+      { name: "Creamy Mushroom Sandwich", price: "230" },
+      { name: "Egg Salad Sandwich", price: "230" },
+      { name: "Smoked Chicken Avocado", price: "265" },
+      { name: "BBQ Chicken Sandwich", price: "265" },
+      { name: "Grilled Chicken Sandwich", price: "265" },
+      { name: "Paprika Chicken & Veggies", price: "265" },
+      { name: "Scrambled Egg & Cheese", price: "230" },
+      { name: "Chocolate Croissant", price: "230" },
+    ],
   },
   {
-    tag: "Sweet",
-    name: "Almond",
-    price: 170,
-    desc: "Rebaked with frangipane, toasted flakes, and a dust of icing sugar.",
+    title: "Mini Pizzas",
+    tag: "Wood-base, freshly baked",
+    items: [
+      { name: "Veg Hyderabadi Dum", price: "220" },
+      { name: "Paneer Tikka", price: "220" },
+      { name: "Tandoori Paneer", price: "220" },
+      { name: "Chicken Hyderabadi", price: "260" },
+      { name: "Butter Chicken", price: "260" },
+      { name: "Margherita", price: "180" },
+      { name: "Chicken Tikka", price: "260" },
+    ],
   },
   {
-    tag: "Savoury",
-    name: "Cheese & Mushroom",
-    price: 220,
-    desc: "Sautéed button mushrooms, melted mozzarella, fresh thyme. Brunch in a bite.",
-  },
-  {
-    tag: "Savoury",
-    name: "Paneer Paprika",
-    price: 230,
-    desc: "Smoky paprika paneer, pickled onion, a whisper of green chilli.",
-  },
-  {
-    tag: "Mini",
-    name: "Mini Croissant Box",
-    price: 280,
-    desc: "Six bite-sized morsels — assorted sweet & savoury. The crowd-pleaser.",
+    title: "Coffee & Chai",
+    tag: "Brewed to order",
+    items: [
+      { name: "Filter Coffee", price: "90" },
+      { name: "Cappuccino", price: "140" },
+      { name: "Latte", price: "150" },
+      { name: "Espresso", price: "110" },
+      { name: "Hot Chocolate", price: "170" },
+      { name: "Masala Chai", price: "70" },
+      { name: "Bombay Cutting", price: "60" },
+      { name: "Iced Americano", price: "150" },
+    ],
   },
 ];
