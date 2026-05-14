@@ -94,13 +94,17 @@ function Index() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="#menu"
+                href="https://www.swiggy.com/city/pune/crosaaintwala-and-co-undri-rest1353841?utm_source=GooglePlaceOrder&utm_campaign=GoogleMap&is_retargeting=true&media_source=GooglePlaceOrder"
+                target="_blank"
+                rel="noreferrer"
                 className="rounded-full bg-[var(--gold)] px-6 py-3 text-sm font-medium text-[var(--primary-foreground)] shadow-[var(--shadow-glow)] transition hover:scale-[1.02]"
               >
-                See the menu
+                Order on Swiggy
               </a>
               <a
-                href="#visit"
+                href="https://www.zomato.com/pune/crosaaintwala-co-hadapsar/order"
+                target="_blank"
+                rel="noreferrer"
                 className="glass rounded-full px-6 py-3 text-sm font-medium text-foreground transition hover:bg-white/10"
               >
                 Find the shop
