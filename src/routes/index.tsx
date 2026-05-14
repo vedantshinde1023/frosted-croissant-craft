@@ -105,7 +105,7 @@ function Index() {
                 href="https://www.zomato.com/pune/crosaaintwala-co-hadapsar/order"
                 target="_blank"
                 rel="noreferrer"
-                className="glass rounded-full px-6 py-3 text-sm font-medium text-foreground transition hover:bg-white/10"
+                className="rounded-full bg-[#E23744] px-6 py-3 text-sm font-medium text-white shadow-[0_10px_30px_-10px_rgba(226,55,68,0.6)] transition hover:scale-[1.02] hover:bg-[#cf2f3c]"
               >
                 Order on Zomato
               </a>
