@@ -440,7 +440,7 @@ function Index() {
               <InfoCard
                 label="Hours"
                 value="Open daily · 8:30 am — 11:30 pm"
-                href="https://www.zomato.com"
+                href="https://www.zomato.com/pune/crosaaintwala-co-hadapsar/book"
                 cta="Reserve via Zomato"
               />
             </div>
