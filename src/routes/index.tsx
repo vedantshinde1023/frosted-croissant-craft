@@ -76,8 +76,8 @@ function Index() {
           aria-label="Freshly baked golden croissant"
           className="absolute inset-0 h-full w-full object-contain bg-background"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/40 to-background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-transparent to-transparent" />
 
         <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-end px-6 pb-20 pt-32 md:justify-center md:pb-0">
           <div className="glass max-w-2xl rounded-3xl p-8 md:p-12">
