@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import heroImg from "@/assets/hero-croissant.jpg";
+import heroVideo from "@/assets/hero-croissant.mp4";
 import menuImg from "@/assets/menu-spread.jpg";
 import interiorImg from "@/assets/interior-entrance.jpg";
 import storefrontImg from "@/assets/storefront.jpg";
@@ -67,11 +67,13 @@ function Index() {
 
       {/* HERO */}
       <section id="top" className="relative min-h-screen w-full">
-        <img
-          src={heroImg}
-          alt="Freshly baked golden croissant"
-          width={1600}
-          height={1920}
+        <video
+          src={heroVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          aria-label="Freshly baked golden croissant"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/40 to-background" />
