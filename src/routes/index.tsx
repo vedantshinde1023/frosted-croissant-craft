@@ -36,8 +36,34 @@ function Index() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Let the fixed hero video show through every section
+  useEffect(() => {
+    const prevBg = document.body.style.background;
+    const prevImg = document.body.style.backgroundImage;
+    document.body.style.background = "transparent";
+    document.body.style.backgroundImage = "none";
+    return () => {
+      document.body.style.background = prevBg;
+      document.body.style.backgroundImage = prevImg;
+    };
+  }, []);
+
   return (
     <div className="relative min-h-screen overflow-x-hidden text-foreground">
+      {/* Fixed background video — stays in place while content scrolls */}
+      <div className="fixed inset-0 -z-10 bg-background">
+        <video
+          src={heroVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          aria-label="Freshly baked golden croissant"
+          className="absolute inset-0 h-full w-full object-contain"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/40 to-background/70" />
+      </div>
+
       {/* Floating glass nav */}
       <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
         <nav
@@ -67,18 +93,6 @@ function Index() {
 
       {/* HERO */}
       <section id="top" className="relative min-h-screen w-full">
-        <video
-          src={heroVideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-          aria-label="Freshly baked golden croissant"
-          className="absolute inset-0 h-full w-full object-contain bg-background"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/70" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-transparent to-transparent" />
-
         <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-end px-6 pb-20 pt-32 md:justify-center md:pb-0">
           <div className="glass max-w-2xl rounded-3xl p-8 md:p-12">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.2em] text-[var(--gold-soft)]">
