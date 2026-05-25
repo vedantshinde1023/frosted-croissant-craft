@@ -59,7 +59,7 @@ function Index() {
           muted
           playsInline
           aria-label="Freshly baked golden croissant"
-          className="absolute inset-0 h-full w-full object-contain"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-full max-h-screen w-auto aspect-[3/4] object-cover md:aspect-auto md:h-full md:w-full md:object-contain"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/40 to-background/70" />
       </div>
